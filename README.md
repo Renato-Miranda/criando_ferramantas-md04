@@ -1,4 +1,4 @@
-# Criando Ferramantas
+# Criando Ferramentas
 
 Uma empresa de desenvolvimento de software precisa de uma ferramenta
 que vai receber uma lista de propriedades de CSS (ex: background-color,
