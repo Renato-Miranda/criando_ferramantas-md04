@@ -1,5 +1,7 @@
+// importa a biblioteca readline.
 import readline from 'readline';
 
+// cria interface no console node.
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -7,6 +9,7 @@ const rl = readline.createInterface({
 
 const propriedades = [];
 
+// função recursiva que obtem os dados de entrada.
 function obterDadosEntrada(){
     rl.question('Digite uma propriedade de CSS (ou "SAIR" para encerrar): ', entrada => {
         if (entrada.toUpperCase() === 'SAIR') {
@@ -18,6 +21,7 @@ function obterDadosEntrada(){
     });
 }
 
+// função anonima que ordena e mostra as propriedades no console.
 rl.on('close', () => {
     const propriedadesOrdenadas = propriedades.sort();
     console.log('\nPropriedades ordenadas de A-Z:');
