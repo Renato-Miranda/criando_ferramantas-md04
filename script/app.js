@@ -1,34 +1,40 @@
-// importa a biblioteca readline.
-import readline from 'readline';
+import { createInterface } from 'readline';
+class ListasCSS {
+    constructor() {
+        this.propriedades = [],
+            this.rl = createInterface({
+                input: process.stdin,
+                output: process.stdout
+            });
+    }
 
-// cria interface no console node.
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+    comecar() {
+        console.log("Digite nome de propriedade CSS, ou digite 'SAIR' para encerrar: ");
+        this.rl.on('line', input => {
+            if (input.toUpperCase() === 'SAIR') {
+                this.rl.close();
+            } else {
+                this.addPropriedade(input.toUpperCase());
+            }
+        })
+        this.rl.on('close', () => {
+            this.mostrarPropriedadesOrdenadas()
+            console.log("Programa encerrado");
+        })
+    }
 
-const propriedades = [];
+    addPropriedade(propriedade) {
+        this.propriedades.push(propriedade)
+    }
 
-// função recursiva que obtem os dados de entrada.
-function obterDadosEntrada(){
-    rl.question('Digite uma propriedade de CSS (ou "SAIR" para encerrar): ', entrada => {
-        if (entrada.toUpperCase() === 'SAIR') {
-            rl.close();
-        } else {
-            propriedades.push(entrada.toUpperCase());
-            obterDadosEntrada();
-        }
-    });
+    mostrarPropriedadesOrdenadas() {
+        const propriedadesOrdenadas = this.propriedades.sort()
+        console.log("Propriedades Ordenadas: ");
+        propriedadesOrdenadas.forEach(propriedade => console.log(propriedade))
+    }
+
+
 }
 
-// função anonima que ordena e mostra as propriedades no console.
-rl.on('close', () => {
-    const propriedadesOrdenadas = propriedades.sort();
-    console.log('\nPropriedades ordenadas de A-Z:');
-    propriedadesOrdenadas.forEach(propriedade => {
-        console.log(propriedade);
-    });
-    process.exit(0);
-});
-
-obterDadosEntrada();
+const listaCss = new ListasCSS()
+listaCss.comecar()
