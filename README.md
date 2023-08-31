@@ -47,7 +47,7 @@ node app.js
 6. Siga as instruções na linha de comando para inserir as propriedades CSS. Digite 'SAIR' quando desejar encerrar a coleta.
 
 7. Após encerrar a coleta, o programa exibirá as propriedades ordenadas alfabeticamente.
-   <img>![Alt text](image.png)<img/>
+   <img>![Alt text](./img/image.png)<img/>
 
 ## Requisitos
 
