@@ -70,6 +70,6 @@ node app.js
 
 ---
 
-Este é apenas um projeto de exemplo e não tem finalidade comercial. Fique à vontade para explorar o código e adaptá-lo às suas necessidades.
+Este é apenas um projeto de estudo e não tem finalidade comercial. Fique à vontade para explorar o código e adaptá-lo às suas necessidades.
 
 Criado por Renato Miranda - [GitHub Profile](https://github.com/Renato-Miranda)
